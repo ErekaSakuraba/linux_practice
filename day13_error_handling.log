@@ -1,0 +1,10 @@
+2026-11-19 16:17:46,426 INFO 処理開始
+2026-11-19 16:17:46,426 WARNING ファイルが見つからないため処理をスキップします
+2026-11-19 16:17:46,426 INFO 処理終了
+2026-11-19 16:31:10,014 INFO 処理開始
+2026-11-19 16:31:10,014 ERROR 予期しないエラーが発生しました
+Traceback (most recent call last):
+  File "c:\Users\e-sak\linux_practice\day13_exception.py", line 13, in <module>
+    result = int("abc")
+ValueError: invalid literal for int() with base 10: 'abc'
+2026-11-19 16:31:10,035 INFO 処理終了

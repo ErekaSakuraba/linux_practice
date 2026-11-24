@@ -1,0 +1,10 @@
+ログ解析結果
+総行数：33
+
+ERRORランキング
+Camera：8件
+Database：5件
+
+WARNランキング
+Camera：4件
+Database：3件

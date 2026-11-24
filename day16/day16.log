@@ -1,0 +1,19 @@
+2026-11-20 10:48:38,027 INFO ログ分析を開始します
+2026-11-20 10:48:38,028 ERROR ログファイルの読み込みに失敗しました
+Traceback (most recent call last):
+  File "/mnt/c/Users/e-sak/linux_practice/day16/log_utils.py", line 6, in read_logs
+    with open(file_path, "r", encoding="utf-8") as file:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'system.log'
+2026-11-20 10:48:38,031 INFO ERROR合計件数：0
+2026-11-20 10:48:38,032 INFO ERRORランキング
+2026-11-20 10:48:38,032 INFO ログ分析を終了します
+2026-11-20 10:50:36,464 INFO ログ分析を開始します
+2026-11-20 10:50:36,467 WARNING 不正なログ行をスキップします：不正なログデータ
+2026-11-20 10:50:36,467 INFO ERROR合計件数：5
+2026-11-20 10:50:36,468 INFO Database：3
+2026-11-20 10:50:36,468 INFO Camera：2
+2026-11-20 10:50:36,469 INFO ERRORランキング
+2026-11-20 10:50:36,469 INFO 1位：Database：3件
+2026-11-20 10:50:36,469 INFO 2位：Camera：2件
+2026-11-20 10:50:36,470 INFO ログ分析を終了します

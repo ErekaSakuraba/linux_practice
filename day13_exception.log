@@ -1,0 +1,8 @@
+2026-11-19 16:04:37,969 INFO 処理を開始します
+2026-11-19 16:04:37,970 ERROR 計算処理でエラーが発生しました
+Traceback (most recent call last):
+  File "c:\Users\e-sak\linux_practice\day13_exception.py", line 13, in <module>
+    result = 10 / 0
+             ~~~^~~
+ZeroDivisionError: division by zero
+2026-11-19 16:04:38,012 INFO 処理を終了します
