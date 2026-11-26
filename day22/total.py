@@ -23,25 +23,34 @@ else:
     rotate_image = cv2.rotate(resize_image, cv2.ROTATE_90_CLOCKWISE)
 
     #左右反転
+    flip_lr = cv2.flip(image,1)
 
-    #各画像を保存
-    cv2.imwrite(
-        os.path.join(output_dir, "output_flip_horizontal.jpg"),
-        resize_image
-    )
-    cv2.imwrite(
-        os.path.join(output_dir, "output_flip_horizontal.jpg"),
-        crop_image
-    )
-    cv2.imwrite(
-        os.path.join(output_dir, "output_flip_horizontal.jpg"),
-        rotate_image
-    )
+    #上下反転
+    flip_tb = cv2.flip(image, 0)
 
-    output_path = os.path.join(output_dir, "output_combined.jpg")
+    #上下左右反転
+    flip_all = cv2.flip(image, -1)
 
-    if cv2.imwrite(output_path, rotate_image):
-        print("画像の保存に成功しました。")
-        print(rotate_image.shape)
-    else:
-        print("画像の保存に失敗しました。")
+    #複合加工
+    crop_combi_image = image[300:700, 500:1000]
+    resize_combi_image = cv2.resize(crop_combi_image, (300, 200))
+    rotate_combi_image = cv2.rotate(resize_combi_image, cv2.ROTATE_90_CLOCKWISE)
+
+    images = {
+    "output_resize.jpg": resize_image,
+    "output_crop.jpg": crop_image,
+    "output_rotate_90.jpg" : rotate_image,
+    "output_flip_horizontal.jpg" : flip_lr,
+    "output_flip_vertical.jpg" : flip_tb,
+    "output_flip_both.jpg" : flip_all,
+    "output_combined.jpg" : rotate_combi_image
+    }
+
+    #保存処理
+    for file_name, img in images.items():
+        output_path = os.path.join(output_dir, file_name)
+        if cv2.imwrite(output_path, img):
+            print(f"{file_name} の保存に成功しました。")
+            print(img.shape)
+        else:
+            print("画像の保存に失敗しました。")
